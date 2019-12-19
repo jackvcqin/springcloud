@@ -9,6 +9,6 @@ public class PayController {
 
     @RequestMapping("/balance")
     public String balance(){
-        return "余额为10000";
+        return "余额为"+(int)(Math.random()*100000);
     }
 }
