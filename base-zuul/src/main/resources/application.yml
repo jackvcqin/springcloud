@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: zuul-server
+
+server:
+  port: 6001
+
+eureka:
+  instance:
+    hostname: 10.6.223.241
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.hostname}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://192.168.231.135:9001/eureka/
+
+#路由配置
+zuul:
+  routes:
+    pay:
+      service-id: base-pay
+      path: /pay/**
