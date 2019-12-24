@@ -1,16 +1,21 @@
 spring:
   application:
-    name: base-pay
+    name: service-pay
 
 server:
   port: 8082
 
 eureka:
   instance:
-    hostname: 10.6.223.241
     prefer-ip-address: true
-    instance-id: ${eureka.instance.hostname}:${server.port}
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     service-url:
       defaultZone: http://192.168.231.135:9001/eureka/
+#      defaultZone: http://localhost:9001/eureka/
 
+# 日志
+logging:
+  file:
+#    path: E:/logs/pay
+    path: /home/javaweb/logs/pay

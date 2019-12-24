@@ -1,9 +1,9 @@
 spring:
   application:
-    name: zuul-server
+    name: service-order
 
 server:
-  port: 6001
+  port: 8081
 
 eureka:
   instance:
@@ -14,18 +14,8 @@ eureka:
       defaultZone: http://192.168.231.135:9001/eureka/
 #      defaultZone: http://localhost:9001/eureka/
 
-#路由配置
-zuul:
-  routes:
-    pay:
-      service-id: service-pay
-      path: /pay/**
-    order:
-      service-id: service-order
-      path: /order/**
-
 # 日志
 logging:
   file:
-#    path: E:/logs/zuul
-    path: /home/javaweb/logs/zuul
+#    path: E:/logs/order
+    path: /home/javaweb/logs/order

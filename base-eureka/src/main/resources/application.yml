@@ -1,20 +1,21 @@
+spring:
+  application:
+    name: eureka-server #Eureka注册名称
 server:
-  port: 9001
-
-
+  port: 9001  #Eureka注册端口
 eureka:
   instance:
-    hostname: 192.168.231.135
-    prefer-ip-address: true
-    instance-id: ${eureka.instance.hostname}:${server.port}
+    prefer-ip-address: true  #使用IP注册
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} #获取服务器IP
   client:
     register-with-eureka: false   #是否向Eureka注册服务，该应用为服务注册中心，不需要注册，设置为false
     fetch-registry: false         #是否检索服务，该应用为注册服务中心，职责为注册和发现服务，无需检索服务，设置为false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${spring.cloud.client.ip-address}:${server.port}/eureka/
   server:
     eviction-interval-timer-in-ms: 3000
-#    enable-self-preservation: false   #关闭注册中心的自我保护机制，防止已关闭的实例无法从注册中心剔除
-spring:
-  application:
-    name: eureka-server
+    enable-self-preservation: false   #关闭注册中心的自我保护机制，防止已关闭的实例无法从注册中心剔除
+logging:  #日志
+  file:
+#    path: E:/logs/eureka
+    path: /home/javaweb/logs/eureka
