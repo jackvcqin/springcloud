@@ -11,6 +11,8 @@ public class OrderController {
 
     @RequestMapping("/list")
     public String list(){
-        return UUID.randomUUID().toString();
+        String resultStr = UUID.randomUUID().toString();
+        System.out.println("---------"+resultStr+"--------");
+        return resultStr;
     }
 }
