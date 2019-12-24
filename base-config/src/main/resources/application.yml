@@ -1,8 +1,2 @@
-spring:
-  application:
-    name: config-server #Eureka注册名称
-  cloud:
-    config:
-      server:
-        git:
-          uri:
+server:
+  port: 7001

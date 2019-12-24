@@ -1,0 +1,7 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.231.135:9001/eureka/    #注册中心地址
+logging:
+  file:
+    path: /home/javaweb/logs/pay   #日志文件路径
