@@ -1,6 +1,6 @@
 spring:
   application:
-    name: zuul-server
+    name: base-zuul
 
 server:
   port: 6001
