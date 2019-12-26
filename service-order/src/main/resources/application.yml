@@ -5,17 +5,18 @@ spring:
 server:
   port: 8081
 
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-  client:
-    service-url:
-      defaultZone: http://192.168.231.135:9001/eureka/
-#      defaultZone: http://localhost:9001/eureka/
-
-# 日志
-logging:
-  file:
-#    path: E:/logs/order
-    path: /home/javaweb/logs/order
+############# Eureka、log 配置信息从config读取 #####################
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+#  client:
+#    service-url:
+#      defaultZone: http://192.168.231.135:9001/eureka/
+##      defaultZone: http://localhost:9001/eureka/
+#
+## 日志
+#logging:
+#  file:
+##    path: E:/logs/order
+#    path: /home/javaweb/logs/order
